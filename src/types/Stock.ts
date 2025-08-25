@@ -29,4 +29,5 @@ export interface BacktestRecord {
   returns: number;
   holdingPeriod: number;
   aiScoreAtBuy: number;
+  logo?: string;
 }

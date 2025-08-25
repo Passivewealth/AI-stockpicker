@@ -55,9 +55,9 @@ const HeroSection = () => {
                   
                   <div className="space-y-3">
                     {[
-                      { symbol: 'AAPL', price: '$175.43', change: '+2.1%', positive: true },
-                      { symbol: 'MSFT', price: '$338.11', change: '+1.8%', positive: true },
-                      { symbol: 'GOOGL', price: '$138.21', change: '-0.5%', positive: false },
+                      { symbol: 'TCS', price: '₹3,542', change: '+2.1%', positive: true },
+                      { symbol: 'RELIANCE', price: '₹2,457', change: '+1.8%', positive: true },
+                      { symbol: 'HDFCBANK', price: '₹1,635', change: '-0.5%', positive: false },
                     ].map((stock, index) => (
                       <div key={index} className="bg-white rounded-lg p-3 flex justify-between items-center">
                         <div>

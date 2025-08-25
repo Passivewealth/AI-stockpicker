@@ -94,7 +94,7 @@ export const mockStockData: Stock[] = [
     tradeRanking: 'Buy',
     marketCap: '7.6L Cr',
     volume: '1.1Cr',
-    logo: 'https://logo.clearbit.com/icicibank.com'
+    logo: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     symbol: 'HINDUNILVR',
@@ -394,7 +394,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 3542.30,
     returns: 10.68,
     holdingPeriod: 90,
-    aiScoreAtBuy: 8.9
+    aiScoreAtBuy: 8.9,
+    logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '2',
@@ -406,7 +407,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 2456.75,
     returns: 12.68,
     holdingPeriod: 89,
-    aiScoreAtBuy: 8.7
+    aiScoreAtBuy: 8.7,
+    logo: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '3',
@@ -418,7 +420,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 1634.85,
     returns: 7.53,
     holdingPeriod: 90,
-    aiScoreAtBuy: 8.5
+    aiScoreAtBuy: 8.5,
+    logo: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '4',
@@ -430,7 +433,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 1456.20,
     returns: 12.12,
     holdingPeriod: 89,
-    aiScoreAtBuy: 8.3
+    aiScoreAtBuy: 8.3,
+    logo: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '5',
@@ -442,7 +446,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 1089.45,
     returns: 11.32,
     holdingPeriod: 90,
-    aiScoreAtBuy: 8.1
+    aiScoreAtBuy: 8.1,
+    logo: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '6',
@@ -454,7 +459,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 1234.50,
     returns: 13.33,
     holdingPeriod: 89,
-    aiScoreAtBuy: 8.2
+    aiScoreAtBuy: 8.2,
+    logo: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '7',
@@ -466,7 +472,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 3234.50,
     returns: 12.45,
     holdingPeriod: 90,
-    aiScoreAtBuy: 8.0
+    aiScoreAtBuy: 8.0,
+    logo: 'https://images.pexels.com/photos/1927574/pexels-photo-1927574.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '8',
@@ -478,7 +485,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 23456.75,
     returns: 10.47,
     holdingPeriod: 89,
-    aiScoreAtBuy: 8.4
+    aiScoreAtBuy: 8.4,
+    logo: 'https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '9',
@@ -490,7 +498,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 10456.25,
     returns: 13.23,
     holdingPeriod: 90,
-    aiScoreAtBuy: 7.9
+    aiScoreAtBuy: 7.9,
+    logo: 'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '10',
@@ -502,7 +511,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 1234.75,
     returns: 12.40,
     holdingPeriod: 89,
-    aiScoreAtBuy: 7.8
+    aiScoreAtBuy: 7.8,
+    logo: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '11',
@@ -514,7 +524,8 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 2387.60,
     returns: 10.73,
     holdingPeriod: 90,
-    aiScoreAtBuy: 7.7
+    aiScoreAtBuy: 7.7,
+    logo: 'https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   },
   {
     id: '12',
@@ -526,6 +537,7 @@ export const mockBacktestData: BacktestRecord[] = [
     sellPrice: 3156.80,
     returns: 9.73,
     holdingPeriod: 89,
-    aiScoreAtBuy: 7.6
+    aiScoreAtBuy: 7.6,
+    logo: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&fit=crop'
   }
 ];
