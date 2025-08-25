@@ -5,7 +5,7 @@ export const mockStockData: Stock[] = [
     symbol: 'RELIANCE',
     company: 'Reliance Industries Ltd.',
     price: 2456.75,
-    aiScore: 8.9,
+    aiScore: 8.8,
     week1: 2.3,
     month1: 7.8,
     month3: 15.2,
