@@ -13,6 +13,7 @@ interface FilterState {
   sentiment: { min: number; max: number };
   valuation: { min: number; max: number };
   industry: { min: number; max: number };
+  aiScore: { min: number; max: number };
 }
 
 const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
@@ -25,7 +26,8 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
     technical: { min: 0, max: 10 },
     sentiment: { min: 0, max: 10 },
     valuation: { min: 0, max: 10 },
-    industry: { min: 0, max: 10 }
+    industry: { min: 0, max: 10 },
+    aiScore: { min: 0, max: 10 }
   });
   const itemsPerPage = 20;
 
@@ -55,7 +57,8 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
       stock.technical >= filters.technical.min && stock.technical <= filters.technical.max &&
       stock.sentiment >= filters.sentiment.min && stock.sentiment <= filters.sentiment.max &&
       stock.valuation >= filters.valuation.min && stock.valuation <= filters.valuation.max &&
-      stock.industry >= filters.industry.min && stock.industry <= filters.industry.max
+      stock.industry >= filters.industry.min && stock.industry <= filters.industry.max &&
+      stock.aiScore >= filters.aiScore.min && stock.aiScore <= filters.aiScore.max
     );
   });
 
@@ -129,11 +132,11 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
         </div>
 
         {showFilters && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-4 bg-white rounded-lg border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 p-4 bg-white rounded-lg border">
             {Object.entries(filters).map(([category, range]) => (
               <div key={category} className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700 capitalize">
-                  {category}
+                  {category === 'aiScore' ? 'AI Score' : category}
                 </label>
                 <div className="flex items-center space-x-2">
                   <input
@@ -194,11 +197,11 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
               </th>
               <th 
                 className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
-                onClick={() => handleSort('change')}
+                onClick={() => handleSort('aiScore')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>1D</span>
-                  {sortField === 'change' && (
+                  <span>AI Score</span>
+                  {sortField === 'aiScore' && (
                     sortDirection === 'asc' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />
                   )}
                 </div>
@@ -261,9 +264,6 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Trade Ranking
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Actions
-              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -304,15 +304,8 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
                   ${stock.price.toFixed(2)}
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap">
-                  <div className={`flex items-center space-x-1 text-sm ${
-                    stock.change >= 0 ? 'text-green-600' : 'text-red-600'
-                  }`}>
-                    {stock.change >= 0 ? (
-                      <TrendingUp className="w-4 h-4" />
-                    ) : (
-                      <TrendingDown className="w-4 h-4" />
-                    )}
-                    <span>{stock.change >= 0 ? '+' : ''}{stock.change.toFixed(2)}%</span>
+                  <div className={`w-16 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white ${getScoreColor(stock.aiScore)}`}>
+                    {stock.aiScore.toFixed(1)}
                   </div>
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap">
@@ -342,11 +335,6 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap text-sm text-blue-600">
                   {stock.tradeRanking}
-                </td>
-                <td className="px-4 py-4 whitespace-nowrap">
-                  <button className="text-gray-400 hover:text-gray-600">
-                    <Info className="w-4 h-4" />
-                  </button>
                 </td>
               </tr>
             ))}
@@ -392,6 +380,22 @@ const StockTable: React.FC<StockTableProps> = ({ stocks, loading }) => {
               Next
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Backtest History Button */}
+      <div className="p-6 bg-gray-50 border-t border-gray-200">
+        <div className="text-center">
+          <button
+            onClick={() => window.location.href = '/backtest'}
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <BarChart3 className="w-5 h-5 mr-2" />
+            View Backtest History
+          </button>
+          <p className="text-sm text-gray-600 mt-2">
+            See historical performance of our AI stock recommendations
+          </p>
         </div>
       </div>
     </div>

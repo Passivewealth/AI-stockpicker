@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import StockTable from './components/StockTable';
 import Footer from './components/Footer';
+import BacktestHistory from './components/BacktestHistory';
 import { mockStockData } from './data/mockData';
 
-function App() {
+function HomePage() {
   const [stocks, setStocks] = useState(mockStockData);
   const [loading, setLoading] = useState(true);
 
@@ -27,6 +29,17 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/backtest" element={<BacktestHistory />} />
+      </Routes>
+    </Router>
   );
 }
 
