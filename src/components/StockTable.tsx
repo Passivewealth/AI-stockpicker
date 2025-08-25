@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronUp, ChevronDown, TrendingUp, TrendingDown, Info, Filter } from 'lucide-react';
+import { ChevronUp, ChevronDown, TrendingUp, TrendingDown, Info, Filter, BarChart3 } from 'lucide-react';
 import { Stock } from '../types/Stock';
 
 interface StockTableProps {
